@@ -1,20 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Sami\\Documents\\Dungeon-Crawler-Roguelite\\Dungeon-Crawler-Roguelite.csproj": {}
+    "c:\\Users\\Sami\\Documents\\Dungeon-Crawler-Roguelite\\Dungeon-Crawler-Roguelite.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Sami\\Documents\\Dungeon-Crawler-Roguelite\\Dungeon-Crawler-Roguelite.csproj": {
+    "c:\\Users\\Sami\\Documents\\Dungeon-Crawler-Roguelite\\Dungeon-Crawler-Roguelite.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Sami\\Documents\\Dungeon-Crawler-Roguelite\\Dungeon-Crawler-Roguelite.csproj",
+        "projectUniqueName": "c:\\Users\\Sami\\Documents\\Dungeon-Crawler-Roguelite\\Dungeon-Crawler-Roguelite.csproj",
         "projectName": "Dungeon-Crawler-Roguelite",
-        "projectPath": "C:\\Users\\Sami\\Documents\\Dungeon-Crawler-Roguelite\\Dungeon-Crawler-Roguelite.csproj",
+        "projectPath": "c:\\Users\\Sami\\Documents\\Dungeon-Crawler-Roguelite\\Dungeon-Crawler-Roguelite.csproj",
         "packagesPath": "C:\\Users\\Sami\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Sami\\Documents\\Dungeon-Crawler-Roguelite\\obj\\",
+        "outputPath": "c:\\Users\\Sami\\Documents\\Dungeon-Crawler-Roguelite\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "E:\\New folder\\NuGetPackages"
+        ],
         "configFilePaths": [
+          "c:\\Users\\Sami\\Documents\\Dungeon-Crawler-Roguelite\\NuGet.Config",
           "C:\\Users\\Sami\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -70,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.405/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

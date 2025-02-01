@@ -23,3 +23,4 @@ C:\Users\Sami\Documents\Dungeon-Crawler-Roguelite\obj\Debug\net8.0\refint\Dungeo
 C:\Users\Sami\Documents\Dungeon-Crawler-Roguelite\obj\Debug\net8.0\Dungeon-Crawler-Roguelite.pdb
 C:\Users\Sami\Documents\Dungeon-Crawler-Roguelite\obj\Debug\net8.0\Dungeon-Crawler-Roguelite.genruntimeconfig.cache
 C:\Users\Sami\Documents\Dungeon-Crawler-Roguelite\obj\Debug\net8.0\ref\Dungeon-Crawler-Roguelite.dll
+c:\Users\Sami\Documents\Dungeon-Crawler-Roguelite\bin\Debug\net8.0\Dungeon-Crawler-Roguelite.pdb
