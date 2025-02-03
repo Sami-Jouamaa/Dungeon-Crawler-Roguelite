@@ -50,3 +50,4 @@ C:\Users\Sami\Documents\Dungeon-Crawler-Roguelite-1\bin\Debug\net8.0\runtimes\wi
 C:\Users\Sami\Documents\Dungeon-Crawler-Roguelite-1\obj\Debug\net8.0\Dungeon-.1C8D300A.Up2Date
 C:\Users\Sami\Documents\Dungeon-Crawler-Roguelite-1\obj\Debug\net8.0\Dungeon-Crawler-Roguelite.genruntimeconfig.cache
 C:\Users\Sami\Documents\Dungeon-Crawler-Roguelite-1\obj\Debug\net8.0\ref\Dungeon-Crawler-Roguelite.dll
+C:\Users\Sami\Documents\Dungeon-Crawler-Roguelite\bin\Debug\net8.0\Content\ball.xnb
