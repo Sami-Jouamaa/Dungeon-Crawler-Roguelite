@@ -243,14 +243,14 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sami\\Documents\\Dungeon-Crawler-Roguelite-1\\Dungeon-Crawler-Roguelite.csproj",
+      "projectUniqueName": "C:\\Users\\Sami\\Documents\\Dungeon-Crawler-Roguelite\\Dungeon-Crawler-Roguelite.csproj",
       "projectName": "Dungeon-Crawler-Roguelite",
-      "projectPath": "C:\\Users\\Sami\\Documents\\Dungeon-Crawler-Roguelite-1\\Dungeon-Crawler-Roguelite.csproj",
+      "projectPath": "C:\\Users\\Sami\\Documents\\Dungeon-Crawler-Roguelite\\Dungeon-Crawler-Roguelite.csproj",
       "packagesPath": "C:\\Users\\Sami\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sami\\Documents\\Dungeon-Crawler-Roguelite-1\\obj\\",
+      "outputPath": "C:\\Users\\Sami\\Documents\\Dungeon-Crawler-Roguelite\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Sami\\Documents\\Dungeon-Crawler-Roguelite-1\\NuGet.Config",
+        "C:\\Users\\Sami\\Documents\\Dungeon-Crawler-Roguelite\\NuGet.Config",
         "C:\\Users\\Sami\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
