@@ -238,25 +238,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Sami\\.nuget\\packages\\": {},
-    "E:\\New folder\\NuGetPackages": {}
+    "C:\\Users\\Sami\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Sami\\Documents\\Dungeon-Crawler-Roguelite\\Dungeon-Crawler-Roguelite.csproj",
+      "projectUniqueName": "C:\\Users\\Sami\\Documents\\Dungeon-Crawler-Roguelite-1\\Dungeon-Crawler-Roguelite.csproj",
       "projectName": "Dungeon-Crawler-Roguelite",
-      "projectPath": "c:\\Users\\Sami\\Documents\\Dungeon-Crawler-Roguelite\\Dungeon-Crawler-Roguelite.csproj",
+      "projectPath": "C:\\Users\\Sami\\Documents\\Dungeon-Crawler-Roguelite-1\\Dungeon-Crawler-Roguelite.csproj",
       "packagesPath": "C:\\Users\\Sami\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Sami\\Documents\\Dungeon-Crawler-Roguelite\\obj\\",
+      "outputPath": "C:\\Users\\Sami\\Documents\\Dungeon-Crawler-Roguelite-1\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "E:\\New folder\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "c:\\Users\\Sami\\Documents\\Dungeon-Crawler-Roguelite\\NuGet.Config",
+        "C:\\Users\\Sami\\Documents\\Dungeon-Crawler-Roguelite-1\\NuGet.Config",
         "C:\\Users\\Sami\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
