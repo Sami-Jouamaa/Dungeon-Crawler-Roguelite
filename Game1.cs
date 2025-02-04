@@ -44,6 +44,9 @@ public class Game1 : Game
         returnString += Character.playerTexture + "," +
             Character.playerPosition + "," +
             Character.characterClass + "," +
+            Character.intelligence + "," +
+            Character.str + "," +
+            Character.dex + "," +
             Character.level + "," +
             Character.health + "," +
             Character.mana + "," +
@@ -77,7 +80,9 @@ public class Game1 : Game
         // }
         // else
         // {
-        //     character.intializeExisting(saveFile);
+        //     var path = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "saveGame.json");
+        //     string data = File.ReadAllText(path);
+        //     character.intializeExisting(data);
         // }
 
         base.Initialize();

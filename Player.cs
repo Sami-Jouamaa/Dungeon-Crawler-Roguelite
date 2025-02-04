@@ -29,6 +29,11 @@ namespace Dungeon_Crawler_Roguelite
         public int shield;
         public int armour;
         public int dodgeChance;
+        // Will be something like 0.8333
+        // Example damage calculations :
+        // EnemeyAttack * (physicalDamageReduction - EnemyPen) = finalDamage
+        // If physicalDamageReduction = 0.8 and EnemyPen = 30 (0.3), then the resulting physicalDamageReduction is 0.3
+        // It will read as "enemy ignores 30% of physical damage reduction.
         public float physicalDamageReduction;
         public int fireRes;
         public int coldRes;
@@ -38,6 +43,9 @@ namespace Dungeon_Crawler_Roguelite
         public float atkDamageIncrease;
         public float spellDamageIncrease;
         public int attackSpeed;
+
+        // When armour = this value, the physical damage reduction will be 50%
+        public int fiftyPercentReduction;
 
         public Player()
         {
@@ -57,6 +65,7 @@ namespace Dungeon_Crawler_Roguelite
             damageIncrease = 0;
             atkDamageIncrease = 0;
             spellDamageIncrease = 0;
+            fiftyPercentReduction = 150;
         }
 
         public Player initializeNew(ClassTypes classType)
@@ -70,33 +79,51 @@ namespace Dungeon_Crawler_Roguelite
                     this.mana = (int)Math.Ceiling((40 + level * 2.5) * (1 + intelligence / 100));
                     this.shield = (int)Math.Ceiling(this.shield * (1 + intelligence / 300));
                     this.dodgeChance = (int)Math.Ceiling(this.dodgeChance * (1 + dex / 200));
+                    this.atkDamageIncrease = (int)Math.Ceiling(this.atkDamageIncrease * (1 + str / 200));
+                    this.physicalDamageReduction = this.calculatePhysicalDamageReduction(this.armour);
                     break;
                 case ClassTypes.Assassin:
                     this.health = (int)Math.Ceiling((72 + level * 3.7) * (1 + str / 100));
                     this.mana = (int)Math.Ceiling((40 + level * 3.0) * (1 + intelligence / 100));
                     this.shield = (int)Math.Ceiling(this.shield * (1 + intelligence / 300));
                     this.dodgeChance = (int)Math.Ceiling(this.dodgeChance * (1 + dex / 200));
+                    this.atkDamageIncrease = (int)Math.Ceiling(this.atkDamageIncrease * (1 + str / 200));
+                    this.physicalDamageReduction = this.calculatePhysicalDamageReduction(this.armour);
                     break;
                 case ClassTypes.Warrior:
                     this.health = (int)Math.Ceiling((84 + level * 4.3) * (1 + str / 100));
                     this.mana = (int)Math.Ceiling((30 + level * 2.2) * (1 + intelligence / 100));
                     this.shield = (int)Math.Ceiling(this.shield * (1 + intelligence / 300));
                     this.dodgeChance = (int)Math.Ceiling(this.dodgeChance * (1 + dex / 200));
+                    this.atkDamageIncrease = (int)Math.Ceiling(this.atkDamageIncrease * (1 + str / 200));
+                    this.physicalDamageReduction = this.calculatePhysicalDamageReduction(this.armour);
                     break;
                 case ClassTypes.Witch:
                     this.health = (int)Math.Ceiling((63 + level * 2.8) * (1 + str / 100));
                     this.mana = (int)Math.Ceiling((50 + level * 3.7) * (1 + intelligence / 100));
                     this.shield = (int)Math.Ceiling(this.shield * (1 + intelligence / 300));
                     this.dodgeChance = (int)Math.Ceiling(this.dodgeChance * (1 + dex / 200));
+                    this.atkDamageIncrease = (int)Math.Ceiling(this.atkDamageIncrease * (1 + str / 200));
+                    this.physicalDamageReduction = this.calculatePhysicalDamageReduction(this.armour);
                     break;
             }
             return this;
         }
 
+        // public initializeExisting(string saveFile)
+        // {
+        // Parse every player attributes with the commas
+        // }
+
         // public void addSkillTree(Player player)
         // {
 
         // }
+
+        public float calculatePhysicalDamageReduction(int armour)
+        {
+            return (armour / (armour + fiftyPercentReduction));
+        }
 
         public bool isAlive()
         {
