@@ -52,6 +52,7 @@ public class Game1 : Game
             Character.mana + "," +
             Character.shield + "," +
             Character.armour + "," +
+            Character.dodgeRating + "," +
             Character.dodgeChance + "," +
             Character.physicalDamageReduction + "," +
             Character.fireRes + "," +

@@ -28,7 +28,9 @@ namespace Dungeon_Crawler_Roguelite
         public int mana;
         public int shield;
         public int armour;
-        public int dodgeChance;
+        // Dodge rating is a big number, that gets converted into a percentage like armour
+        public int dodgeRating;
+        public float dodgeChance;
         // Will be something like 0.8333
         // Example damage calculations :
         // EnemeyAttack * (physicalDamageReduction - EnemyPen) = finalDamage
@@ -46,6 +48,7 @@ namespace Dungeon_Crawler_Roguelite
 
         // When armour = this value, the physical damage reduction will be 50%
         public int fiftyPercentReduction;
+        public int fiftyPercentDodgeChance;
 
         public Player()
         {
@@ -57,6 +60,8 @@ namespace Dungeon_Crawler_Roguelite
             intelligence = 0;
             health = 1;
             armour = 0;
+            dodgeRating = 0;
+            dodgeChance = 0;
             physicalDamageReduction = 0;
             fireRes = 0;
             coldRes = 0;
@@ -66,6 +71,7 @@ namespace Dungeon_Crawler_Roguelite
             atkDamageIncrease = 0;
             spellDamageIncrease = 0;
             fiftyPercentReduction = 150;
+            fiftyPercentDodgeChance = 150;
         }
 
         public Player initializeNew(ClassTypes classType)
@@ -78,7 +84,8 @@ namespace Dungeon_Crawler_Roguelite
                     // Mana could be something replenishable every turn, and you have a whole turn to use it
                     this.mana = (int)Math.Ceiling((40 + level * 2.5) * (1 + intelligence / 100));
                     this.shield = (int)Math.Ceiling(this.shield * (1 + intelligence / 300));
-                    this.dodgeChance = (int)Math.Ceiling(this.dodgeChance * (1 + dex / 200));
+                    this.dodgeRating = (int)Math.Ceiling(30 + this.dodgeRating * (1 + dex / 200));
+                    this.dodgeChance = this.calculateDodgeChance(this.dodgeRating);
                     this.atkDamageIncrease = (int)Math.Ceiling(this.atkDamageIncrease * (1 + str / 200));
                     this.physicalDamageReduction = this.calculatePhysicalDamageReduction(this.armour);
                     break;
@@ -86,7 +93,8 @@ namespace Dungeon_Crawler_Roguelite
                     this.health = (int)Math.Ceiling((72 + level * 3.7) * (1 + str / 100));
                     this.mana = (int)Math.Ceiling((40 + level * 3.0) * (1 + intelligence / 100));
                     this.shield = (int)Math.Ceiling(this.shield * (1 + intelligence / 300));
-                    this.dodgeChance = (int)Math.Ceiling(this.dodgeChance * (1 + dex / 200));
+                    this.dodgeRating = (int)Math.Ceiling(40 + this.dodgeRating * (1 + dex / 200));
+                    this.dodgeChance = this.calculateDodgeChance(this.dodgeRating);
                     this.atkDamageIncrease = (int)Math.Ceiling(this.atkDamageIncrease * (1 + str / 200));
                     this.physicalDamageReduction = this.calculatePhysicalDamageReduction(this.armour);
                     break;
@@ -94,7 +102,8 @@ namespace Dungeon_Crawler_Roguelite
                     this.health = (int)Math.Ceiling((84 + level * 4.3) * (1 + str / 100));
                     this.mana = (int)Math.Ceiling((30 + level * 2.2) * (1 + intelligence / 100));
                     this.shield = (int)Math.Ceiling(this.shield * (1 + intelligence / 300));
-                    this.dodgeChance = (int)Math.Ceiling(this.dodgeChance * (1 + dex / 200));
+                    this.dodgeRating = (int)Math.Ceiling(15 + this.dodgeRating * (1 + dex / 200));
+                    this.dodgeChance = this.calculateDodgeChance(this.dodgeRating);
                     this.atkDamageIncrease = (int)Math.Ceiling(this.atkDamageIncrease * (1 + str / 200));
                     this.physicalDamageReduction = this.calculatePhysicalDamageReduction(this.armour);
                     break;
@@ -102,7 +111,8 @@ namespace Dungeon_Crawler_Roguelite
                     this.health = (int)Math.Ceiling((63 + level * 2.8) * (1 + str / 100));
                     this.mana = (int)Math.Ceiling((50 + level * 3.7) * (1 + intelligence / 100));
                     this.shield = (int)Math.Ceiling(this.shield * (1 + intelligence / 300));
-                    this.dodgeChance = (int)Math.Ceiling(this.dodgeChance * (1 + dex / 200));
+                    this.dodgeRating = (int)Math.Ceiling(20 + this.dodgeRating * (1 + dex / 200));
+                    this.dodgeChance = this.calculateDodgeChance(this.dodgeRating);
                     this.atkDamageIncrease = (int)Math.Ceiling(this.atkDamageIncrease * (1 + str / 200));
                     this.physicalDamageReduction = this.calculatePhysicalDamageReduction(this.armour);
                     break;
@@ -123,6 +133,11 @@ namespace Dungeon_Crawler_Roguelite
         public float calculatePhysicalDamageReduction(int armour)
         {
             return (armour / (armour + fiftyPercentReduction));
+        }
+
+        public float calculateDodgeChance(int dodgeRating)
+        {
+            return (dodgeRating / (dodgeRating + fiftyPercentDodgeChance));
         }
 
         public bool isAlive()
