@@ -28,36 +28,37 @@ public class Game1 : Game
         _graphics = new GraphicsDeviceManager(this);
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
+        Character = new Player();
     }
 
-    static void SaveGame(Player player)
+    static void SaveGame()
     {
         var path = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "saveGame.json");
-        string Data = Game1.createSaveData(player);
+        string Data = Game1.createSaveData();
         File.WriteAllText(path, Data);
     }
 
-    static string createSaveData(Player player)
+    static string createSaveData()
     {
         string returnString = "";
-        returnString += player.playerTexture +
-            player.playerPosition +
-            player.characterClass +
-            player.level +
-            player.health +
-            player.mana +
-            player.shield +
-            player.armour +
-            player.dodgeChance +
-            player.physicalDamageReduction +
-            player.fireRes +
-            player.coldRes +
-            player.lightningRes +
-            player.darkRes +
-            player.damageIncrease +
-            player.atkDamageIncrease +
-            player.spellDamageIncrease +
-            player.attackSpeed;
+        returnString += Character.playerTexture + "," +
+            Character.playerPosition + "," +
+            Character.characterClass + "," +
+            Character.level + "," +
+            Character.health + "," +
+            Character.mana + "," +
+            Character.shield + "," +
+            Character.armour + "," +
+            Character.dodgeChance + "," +
+            Character.physicalDamageReduction + "," +
+            Character.fireRes + "," +
+            Character.coldRes + "," +
+            Character.lightningRes + "," +
+            Character.darkRes + "," +
+            Character.damageIncrease + "," +
+            Character.atkDamageIncrease + "," +
+            Character.spellDamageIncrease + "," +
+            Character.attackSpeed;
         return returnString;
     }
 
@@ -66,12 +67,12 @@ public class Game1 : Game
         // TODO: Add your initialization logic here
         ballPosition = new Vector2(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2);
         ballSpeed = 100f;
-        this.character = new Player();
+        Character = new Player();
 
         // if new character
         // if (isNewCharacter)
         // {
-        this.character = character.initializeNew(Dungeon_Crawler_Roguelite.Player.ClassTypes.Warrior);
+        Character = Character.initializeNew(Dungeon_Crawler_Roguelite.Player.ClassTypes.Warrior);
         // character.addSkillTree(character);
         // }
         // else
@@ -94,7 +95,7 @@ public class Game1 : Game
     {
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
         {
-            SaveGame(Game1.Character);
+            SaveGame();
             Exit();
         }
 
