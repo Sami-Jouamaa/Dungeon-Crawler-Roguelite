@@ -64,7 +64,7 @@ public class Game1 : Game
             SavedCharacters[index].damageIncrease + "," +
             SavedCharacters[index].atkDamageIncrease + "," +
             SavedCharacters[index].spellDamageIncrease + "," +
-            SavedCharacters[index].attackSpeed + "/n";
+            SavedCharacters[index].attackSpeed + "endCharacter,";
         }
         return returnString;
     }

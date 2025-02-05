@@ -123,10 +123,12 @@ namespace Dungeon_Crawler_Roguelite
             return this;
         }
 
-        // Index can be used to skip a part of the string content (index * nb of attributes per player)
+        // Index can be used to skip to the correct character to load
         // public initializeExisting(string saveFile, int characterIndex)
         // {
         // Parse every player attributes with the commas
+        // string[] characters = saveFile.split("endCharacter,");
+        // string[] correctCharacterAttribute = characters[characterIndex];
         // }
 
         // public void addSkillTree(Player player)
