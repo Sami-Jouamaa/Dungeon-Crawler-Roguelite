@@ -18,7 +18,7 @@ public class Game1 : Game
     float ballSpeed;
 
     static Player Character;
-    Player[] SavedCharacters;
+    static Player[] SavedCharacters;
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
 
@@ -43,28 +43,28 @@ public class Game1 : Game
         string returnString = "";
         for (int index = 0; index < 3; index++)
         {
-            returnString += Character.playerTexture + "," +
-            Character.playerPosition + "," +
-            Character.characterClass + "," +
-            Character.intelligence + "," +
-            Character.str + "," +
-            Character.dex + "," +
-            Character.level + "," +
-            Character.health + "," +
-            Character.mana + "," +
-            Character.shield + "," +
-            Character.armour + "," +
-            Character.dodgeRating + "," +
-            Character.dodgeChance + "," +
-            Character.physicalDamageReduction + "," +
-            Character.fireRes + "," +
-            Character.coldRes + "," +
-            Character.lightningRes + "," +
-            Character.darkRes + "," +
-            Character.damageIncrease + "," +
-            Character.atkDamageIncrease + "," +
-            Character.spellDamageIncrease + "," +
-            Character.attackSpeed + "/n";
+            returnString += SavedCharacters[index].playerTexture + "," +
+            SavedCharacters[index].playerPosition + "," +
+            SavedCharacters[index].characterClass + "," +
+            SavedCharacters[index].intelligence + "," +
+            SavedCharacters[index].str + "," +
+            SavedCharacters[index].dex + "," +
+            SavedCharacters[index].level + "," +
+            SavedCharacters[index].health + "," +
+            SavedCharacters[index].mana + "," +
+            SavedCharacters[index].shield + "," +
+            SavedCharacters[index].armour + "," +
+            SavedCharacters[index].dodgeRating + "," +
+            SavedCharacters[index].dodgeChance + "," +
+            SavedCharacters[index].physicalDamageReduction + "," +
+            SavedCharacters[index].fireRes + "," +
+            SavedCharacters[index].coldRes + "," +
+            SavedCharacters[index].lightningRes + "," +
+            SavedCharacters[index].darkRes + "," +
+            SavedCharacters[index].damageIncrease + "," +
+            SavedCharacters[index].atkDamageIncrease + "," +
+            SavedCharacters[index].spellDamageIncrease + "," +
+            SavedCharacters[index].attackSpeed + "/n";
         }
         return returnString;
     }
@@ -88,7 +88,7 @@ public class Game1 : Game
         //     character.intializeExisting(data);
         // }
 
-        this.SavedCharacters.Append<Player>(Character);
+        SavedCharacters.Append<Player>(Character);
         base.Initialize();
     }
 
