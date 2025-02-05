@@ -74,12 +74,11 @@ public class Game1 : Game
         // TODO: Add your initialization logic here
         ballPosition = new Vector2(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2);
         ballSpeed = 100f;
-        Character = new Player();
 
         // if new character
         // if (isNewCharacter)
         // {
-        Character = Character.initializeNew(Dungeon_Crawler_Roguelite.Player.ClassTypes.Warrior);
+        // Character = Character.initializeNew(Dungeon_Crawler_Roguelite.Player.ClassTypes.Warrior);
         // character.addSkillTree(character);
         // }
         // else

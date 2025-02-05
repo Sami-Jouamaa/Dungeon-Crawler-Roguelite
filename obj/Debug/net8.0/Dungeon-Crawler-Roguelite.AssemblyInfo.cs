@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Dungeon-Crawler-Roguelite")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0288a724513f7d886a75b1e5b3fac53729d2e8a0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+de3389e08799925d707a03575ffe034e60741b41")]
 [assembly: System.Reflection.AssemblyProductAttribute("Dungeon-Crawler-Roguelite")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Dungeon-Crawler-Roguelite")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
