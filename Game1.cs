@@ -18,8 +18,7 @@ public class Game1 : Game
     float ballSpeed;
 
     static Player Character;
-
-    Player character;
+    Player[] SavedCharacters;
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
 
@@ -29,6 +28,7 @@ public class Game1 : Game
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
         Character = new Player();
+        SavedCharacters = new Player[4];
     }
 
     static void SaveGame()
@@ -41,7 +41,9 @@ public class Game1 : Game
     static string createSaveData()
     {
         string returnString = "";
-        returnString += Character.playerTexture + "," +
+        for (int index = 0; index < 3; index++)
+        {
+            returnString += Character.playerTexture + "," +
             Character.playerPosition + "," +
             Character.characterClass + "," +
             Character.intelligence + "," +
@@ -62,7 +64,8 @@ public class Game1 : Game
             Character.damageIncrease + "," +
             Character.atkDamageIncrease + "," +
             Character.spellDamageIncrease + "," +
-            Character.attackSpeed;
+            Character.attackSpeed + "/n";
+        }
         return returnString;
     }
 
@@ -86,6 +89,7 @@ public class Game1 : Game
         //     character.intializeExisting(data);
         // }
 
+        this.SavedCharacters.Append<Player>(Character);
         base.Initialize();
     }
 

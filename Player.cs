@@ -55,6 +55,8 @@ namespace Dungeon_Crawler_Roguelite
             playerTexture = "ball";
             // Position is going to be replaced in the Initializa function in Game
             playerPosition = new Vector2(0, 0);
+            characterClass = ClassTypes.Witch;
+            level = 0;
             str = 0;
             dex = 0;
             intelligence = 0;
@@ -74,49 +76,50 @@ namespace Dungeon_Crawler_Roguelite
             fiftyPercentDodgeChance = 150;
         }
 
+        // Only happens when creating a new character, otherwise it will go to initializeExisting
         public Player initializeNew(ClassTypes classType)
         {
-            // Shield comes from gear and increases by 1% for every intelligence
+            this.level = 0;
+            float baseHP;
+            float baseMana;
+            float baseDodge;
             switch (classType)
             {
                 case ClassTypes.Archer:
-                    this.health = (int)Math.Ceiling((66 + level * 3.1) * (1 + str / 100));
-                    // Mana could be something replenishable every turn, and you have a whole turn to use it
-                    this.mana = (int)Math.Ceiling((40 + level * 2.5) * (1 + intelligence / 100));
-                    this.shield = (int)Math.Ceiling(this.shield * (1 + intelligence / 300));
-                    this.dodgeRating = (int)Math.Ceiling(30 + this.dodgeRating * (1 + dex / 200));
-                    this.dodgeChance = this.calculateDodgeChance(this.dodgeRating);
-                    this.atkDamageIncrease = (int)Math.Ceiling(this.atkDamageIncrease * (1 + str / 200));
-                    this.physicalDamageReduction = this.calculatePhysicalDamageReduction(this.armour);
+                    baseHP = 66;
+                    baseMana = 40;
+                    baseDodge = 30;
                     break;
                 case ClassTypes.Assassin:
-                    this.health = (int)Math.Ceiling((72 + level * 3.7) * (1 + str / 100));
-                    this.mana = (int)Math.Ceiling((40 + level * 3.0) * (1 + intelligence / 100));
-                    this.shield = (int)Math.Ceiling(this.shield * (1 + intelligence / 300));
-                    this.dodgeRating = (int)Math.Ceiling(40 + this.dodgeRating * (1 + dex / 200));
-                    this.dodgeChance = this.calculateDodgeChance(this.dodgeRating);
-                    this.atkDamageIncrease = (int)Math.Ceiling(this.atkDamageIncrease * (1 + str / 200));
-                    this.physicalDamageReduction = this.calculatePhysicalDamageReduction(this.armour);
+                    baseHP = 72;
+                    baseMana = 40;
+                    baseDodge = 40;
                     break;
                 case ClassTypes.Warrior:
-                    this.health = (int)Math.Ceiling((84 + level * 4.3) * (1 + str / 100));
-                    this.mana = (int)Math.Ceiling((30 + level * 2.2) * (1 + intelligence / 100));
-                    this.shield = (int)Math.Ceiling(this.shield * (1 + intelligence / 300));
-                    this.dodgeRating = (int)Math.Ceiling(15 + this.dodgeRating * (1 + dex / 200));
-                    this.dodgeChance = this.calculateDodgeChance(this.dodgeRating);
-                    this.atkDamageIncrease = (int)Math.Ceiling(this.atkDamageIncrease * (1 + str / 200));
-                    this.physicalDamageReduction = this.calculatePhysicalDamageReduction(this.armour);
+                    baseHP = 84;
+                    baseMana = 30;
+                    baseDodge = 15;
                     break;
                 case ClassTypes.Witch:
-                    this.health = (int)Math.Ceiling((63 + level * 2.8) * (1 + str / 100));
-                    this.mana = (int)Math.Ceiling((50 + level * 3.7) * (1 + intelligence / 100));
-                    this.shield = (int)Math.Ceiling(this.shield * (1 + intelligence / 300));
-                    this.dodgeRating = (int)Math.Ceiling(20 + this.dodgeRating * (1 + dex / 200));
-                    this.dodgeChance = this.calculateDodgeChance(this.dodgeRating);
-                    this.atkDamageIncrease = (int)Math.Ceiling(this.atkDamageIncrease * (1 + str / 200));
-                    this.physicalDamageReduction = this.calculatePhysicalDamageReduction(this.armour);
+                    baseHP = 63;
+                    baseMana = 50;
+                    baseDodge = 20;
+                    break;
+                default:
+                    baseHP = 25;
+                    baseMana = 25;
+                    baseDodge = 25;
                     break;
             }
+            this.health = (int)Math.Ceiling((baseHP + level * 3.1) * (1 + str / 100));
+            // Mana could be something replenishable every turn, and you have a whole turn to use it
+            this.mana = (int)Math.Ceiling((baseMana + level * 2.5) * (1 + intelligence / 100));
+            // Shield comes from gear and increases by 1% for every 2 intelligence
+            this.shield = (int)Math.Ceiling(this.shield * (1 + intelligence / 200));
+            this.dodgeRating = (int)Math.Ceiling(baseDodge + this.dodgeRating * (1 + dex / 100));
+            this.dodgeChance = this.calculateDodgeChance(this.dodgeRating);
+            this.atkDamageIncrease = (int)Math.Ceiling(this.atkDamageIncrease * (1 + str / 200));
+            this.physicalDamageReduction = this.calculatePhysicalDamageReduction(this.armour);
             return this;
         }
 
