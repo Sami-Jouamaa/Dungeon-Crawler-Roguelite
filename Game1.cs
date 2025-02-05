@@ -85,7 +85,8 @@ public class Game1 : Game
         // {
         //     var path = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "saveGame.json");
         //     string data = File.ReadAllText(path);
-        //     character.intializeExisting(data);
+        //     index is index at which the character clicked on in the array is placed
+        //     character.intializeExisting(data, index);
         // }
 
         SavedCharacters.Append<Player>(Character);

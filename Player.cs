@@ -106,8 +106,8 @@ namespace Dungeon_Crawler_Roguelite
                     baseDodge = 20;
                     break;
                 default:
-                    baseHP = 25;
-                    baseMana = 25;
+                    baseHP = 60;
+                    baseMana = 35;
                     baseDodge = 25;
                     break;
             }
@@ -123,7 +123,8 @@ namespace Dungeon_Crawler_Roguelite
             return this;
         }
 
-        // public initializeExisting(string saveFile)
+        // Index can be used to skip a part of the string content (index * nb of attributes per player)
+        // public initializeExisting(string saveFile, int characterIndex)
         // {
         // Parse every player attributes with the commas
         // }
